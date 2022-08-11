@@ -1,57 +1,57 @@
 #include "QAngle.h"
 QAngle::QAngle() { x = 0; y = 0; z = 0; };
 QAngle::QAngle(float x, float y, float z) { this->x = x, this->y = y; this->z = z; }
-void QAngle::operator=(QAngle replace) {
-	x = replace.x;
-	y = replace.y;
-	z = replace.z;
+void QAngle::operator=(QAngle ang) {
+	x = ang.x;
+	y = ang.y;
+	z = ang.z;
 }
-QAngle QAngle::operator+(QAngle replace)
+QAngle QAngle::operator+(QAngle ang)
 {
-	return QAngle(x + replace.x, y + replace.y, z + replace.z);
+	return QAngle(x + ang.x, y + ang.y, z + ang.z);
 }
-QAngle QAngle::operator-(QAngle replace)
+QAngle QAngle::operator-(QAngle ang)
 {
-	return QAngle(x - replace.x, y - replace.y, z - replace.z);
+	return QAngle(x - ang.x, y - ang.y, z - ang.z);
 }
 QAngle QAngle::operator-() {
 	return QAngle(-x, -y, -z);
 }
-QAngle QAngle::operator*(QAngle replace)
+QAngle QAngle::operator*(QAngle ang)
 {
-	return QAngle(x * replace.x, y * replace.y, z * replace.z);
+	return QAngle(x * ang.x, y * ang.y, z * ang.z);
 }
-QAngle QAngle::operator/(QAngle replace)
+QAngle QAngle::operator/(QAngle ang)
 {
-	return QAngle(x / replace.x, y / replace.y, z / replace.z);
+	return QAngle(x / ang.x, y / ang.y, z / ang.z);
 }
-QAngle QAngle::operator*(float replace)
+QAngle QAngle::operator*(float ang)
 {
-	return QAngle(x * replace, y * replace, z * replace);
+	return QAngle(x * ang, y * ang, z * ang);
 }
-QAngle QAngle::operator/(float replace)
+QAngle QAngle::operator/(float ang)
 {
-	return QAngle(x / replace, y / replace, z / replace);
+	return QAngle(x / ang, y / ang, z / ang);
 }
-void QAngle::operator+=(QAngle replace) {
-	x += replace.x;
-	z += replace.y;
-	y += replace.z;
+void QAngle::operator+=(QAngle ang) {
+	x += ang.x;
+	z += ang.y;
+	y += ang.z;
 }
-void QAngle::operator-=(QAngle replace) {
-	x -= replace.x;
-	z -= replace.y;
-	y -= replace.z;
+void QAngle::operator-=(QAngle ang) {
+	x -= ang.x;
+	z -= ang.y;
+	y -= ang.z;
 }
-void QAngle::operator/=(QAngle replace) {
-	x /= replace.x;
-	z /= replace.y;
-	y /= replace.z;
+void QAngle::operator/=(QAngle ang) {
+	x /= ang.x;
+	z /= ang.y;
+	y /= ang.z;
 }
-void QAngle::operator*=(QAngle replace) {
-	x *= replace.x;
-	z *= replace.y;
-	y *= replace.z;
+void QAngle::operator*=(QAngle ang) {
+	x *= ang.x;
+	z *= ang.y;
+	y *= ang.z;
 }
 float QAngle::operator[](int i) {
 	if (i > 2)

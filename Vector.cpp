@@ -1,57 +1,57 @@
 #include "Vector.h"
 Vector::Vector() { x = 0; y = 0; z = 0; };
 Vector::Vector(float x, float y, float z) { this->x = x, this->y = y; this->z = z; }
-void Vector::operator=(Vector replace) {
-	x = replace.x;
-	y = replace.y;
-	z = replace.z;
+void Vector::operator=(Vector vec) {
+	x = vec.x;
+	y = vec.y;
+	z = vec.z;
 }
-Vector Vector::operator+(Vector replace)
+Vector Vector::operator+(Vector vec)
 {
-	return Vector(x + replace.x, y + replace.y, z + replace.z);
+	return Vector(x + vec.x, y + vec.y, z + vec.z);
 }
-Vector Vector::operator-(Vector replace)
+Vector Vector::operator-(Vector vec)
 {
-	return Vector(x - replace.x, y - replace.y, z - replace.z);
+	return Vector(x - vec.x, y - vec.y, z - vec.z);
 }
 Vector Vector::operator-() {
 	return Vector(-x, -y, -z);
 }
-Vector Vector::operator*(Vector replace)
+Vector Vector::operator*(Vector vec)
 {
-	return Vector(x * replace.x, y * replace.y, z * replace.z);
+	return Vector(x * vec.x, y * vec.y, z * vec.z);
 }
-Vector Vector::operator/(Vector replace)
+Vector Vector::operator/(Vector vec)
 {
-	return Vector(x / replace.x, y / replace.y, z / replace.z);
+	return Vector(x / vec.x, y / vec.y, z / vec.z);
 }
-Vector Vector::operator*(float replace)
+Vector Vector::operator*(float vec)
 {
-	return Vector(x * replace, y * replace, z * replace);
+	return Vector(x * vec, y * vec, z * vec);
 }
-Vector Vector::operator/(float replace)
+Vector Vector::operator/(float vec)
 {
-	return Vector(x / replace, y / replace, z / replace);
+	return Vector(x / vec, y / vec, z / vec);
 }
-void Vector::operator+=(Vector replace) {
-	x += replace.x;
-	z += replace.y;
-	y += replace.z;
+void Vector::operator+=(Vector vec) {
+	x += vec.x;
+	z += vec.y;
+	y += vec.z;
 }
-void Vector::operator-=(Vector replace) {
-	x -= replace.x;
-	z -= replace.y;
-	y -= replace.z;
+void Vector::operator-=(Vector vec) {
+	x -= vec.x;
+	z -= vec.y;
+	y -= vec.z;
 }
-void Vector::operator/=(Vector replace) {
-	x /= replace.x;
-	z /= replace.y;
-	y /= replace.z;
+void Vector::operator/=(Vector vec) {
+	x /= vec.x;
+	z /= vec.y;
+	y /= vec.z;
 }
-void Vector::operator*=(Vector replace) {
-	x *= replace.x;
-	z *= replace.y;
-	y *= replace.z;
+void Vector::operator*=(Vector vec) {
+	x *= vec.x;
+	z *= vec.y;
+	y *= vec.z;
 }
 float Vector::operator[](int i) {
 	if (i > 2)
