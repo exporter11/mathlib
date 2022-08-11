@@ -35,23 +35,23 @@ Vector Vector::operator/(float vec)
 }
 void Vector::operator+=(Vector vec) {
 	x += vec.x;
-	z += vec.y;
-	y += vec.z;
+	y += vec.y;
+	z += vec.z;
 }
 void Vector::operator-=(Vector vec) {
 	x -= vec.x;
-	z -= vec.y;
-	y -= vec.z;
+	y -= vec.y;
+	z -= vec.z;
 }
 void Vector::operator/=(Vector vec) {
 	x /= vec.x;
-	z /= vec.y;
-	y /= vec.z;
+	y /= vec.y;
+	z /= vec.z;
 }
 void Vector::operator*=(Vector vec) {
 	x *= vec.x;
-	z *= vec.y;
-	y *= vec.z;
+	y *= vec.y;
+	z *= vec.z;
 }
 float Vector::operator[](int i) {
 	if (i > 2)

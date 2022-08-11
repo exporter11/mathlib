@@ -23,6 +23,7 @@ struct QAngle {
 
 	QAngle abs(bool set_classmember_to_abs);
     void clamp();
-    void angle_from_vector(Vector forward);
+	void angle_from_vector(Vector forward);
+	float fov();
  
 };

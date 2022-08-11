@@ -35,23 +35,23 @@ QAngle QAngle::operator/(float ang)
 }
 void QAngle::operator+=(QAngle ang) {
 	x += ang.x;
-	z += ang.y;
-	y += ang.z;
+	y += ang.y;
+	z += ang.z;
 }
 void QAngle::operator-=(QAngle ang) {
 	x -= ang.x;
-	z -= ang.y;
-	y -= ang.z;
+	y -= ang.y;
+	z -= ang.z;
 }
 void QAngle::operator/=(QAngle ang) {
 	x /= ang.x;
-	z /= ang.y;
-	y /= ang.z;
+	y /= ang.y;
+	z /= ang.z;
 }
 void QAngle::operator*=(QAngle ang) {
 	x *= ang.x;
-	z *= ang.y;
-	y *= ang.z;
+	y *= ang.y;
+	z *= ang.z;
 }
 float QAngle::operator[](int i) {
 	if (i > 2)
@@ -65,13 +65,14 @@ QAngle QAngle::abs(bool set_classmembers_to_abs) {
 		x = x < 0 ? -x : x;
 		y = y < 0 ? -y : y;
 		z = z < 0 ? -z : z;
+		return QAngle(x, y, z);
 	}
 
 	return QAngle(x < 0 ? -x : x, y < 0 ? -y : y, z < 0 ? -z : z);
 }
 void QAngle::clamp() {
-    x = x > 89 ? 89 : x;
-    x = x < -89 ? -89 : x;
+    x = x > 180.f ? x-360 : x;
+    x = x < -180 ? x+360 : x;
     y = y > 180 ? y - 360 : y;
     y = y < -180 ? y + 360 : y;
 }
@@ -99,4 +100,7 @@ void QAngle::angle_from_vector(Vector forward) {
     x = pitch;
     y = yaw;
     z = 0.f;
+}
+float QAngle::fov() {
+	return sqrt(x * x + y * y + z * z);
 }
